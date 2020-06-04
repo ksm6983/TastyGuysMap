@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/* reset */
+*,:before,:after{box-sizing:border-box}
+html{overflow-y:scroll;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{color:#2f2f2f;font-family:'Noto Sans KR','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:14px;line-height:1.42857}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block;}
+img,fieldset{border:none}
+img{vertical-align:top}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{background-color:transparent;-webkit-text-decoration-skip:objects;text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:none}
+table{border-collapse:collapse;border-spacing:0} 
+legend{*width:0}
+input::-webkit-input-placeholder{line-height:normal!important;}
+input[type='text'],input[type='email'],input[type='password'],input[type='search'],input[type='submit']{-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;}
+input[type='checkbox']{box-shadow:none;}
+label,select{cursor:pointer}
+select{background:#fff;}
+select::-ms-expand{background:transparent;border:none;}
+button{padding:0;border:none;background:none;cursor:pointer}
+textarea{overflow:auto}
+[hidden]{display:none}
+caption{overflow:hidden;width:1px;height:1px;margin-top:-1px}
+.blind,legend{display:block;overflow:hidden;position:absolute;left:0;top:-9999em}
+
+/* common */
+.skip a{display:block;position:absolute;left:0;top:-9999em;z-index:9999;overflow:hidden;width:100%;background-color:#333;color:#fff;font-size:1.2em;font-weight:bold;text-align:center;text-decoration:none;line-height:2.2}
+.skip a:hover,.skip a:active,.skip a:focus{top:0}
+.clearfix{*zoom:1}
+.clearfix:after{content:'';display:block;clear:both;}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.container{position:relative;width:1200px;margin:0 auto;}
+
+/*-------------------------------------------
+	header
+--------------------------------------------*/
+#header{}
+
+
+/*-------------------------------------------
+	footer
+--------------------------------------------*/
+#footer{}
+
+
+@media (max-width:1200px) {
+	
+}
+@media (max-width:768px) {
+	
+}

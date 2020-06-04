@@ -1,0 +1,83 @@
+@charset 'utf-8';
+
+/*********** 본고딕 font-family: 'Noto Sans KR'; ************/
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/NotoSansKR-Light.woff2') format('woff2'),
+		url('../fonts/NotoSansKR-Light.woff') format('woff'),
+		url('../fonts/NotoSansKR-Light.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NotoSansKR-Regular.woff2') format('woff2'),
+		url('../fonts/NotoSansKR-Regular.woff') format('woff'),
+		url('../fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/NotoSansKR-Medium.woff2') format('woff2'),
+		url('../fonts/NotoSansKR-Medium.woff') format('woff'),
+		url('../fonts/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/NotoSansKR-Bold.woff2') format('woff2'),
+		url('../fonts/NotoSansKR-Bold.woff') format('woff'),
+		url('../fonts/NotoSansKR-Bold.otf') format('opentype');
+}
+
+/*********** 나눔스퀘어 font-family: 'Nanum Square'; ************/
+@font-face {
+	font-family: 'Nanum Square';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/NanumSquareL-Light.eot');
+	src: url('../fonts/NanumSquareL-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/NanumSquareL-Light.woff2') format('woff2'),
+		url('../fonts/NanumSquareL-Light.woff') format('woff'),
+		url('../fonts/NanumSquareL-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nanum Square';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NanumSquareR-Light.eot');
+	src: url('../fonts/NanumSquareR-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/NanumSquareR-Light.woff2') format('woff2'),
+		url('../fonts/NanumSquareR-Light.woff') format('woff'),
+		url('../fonts/NanumSquareR-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nanum Square';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/NanumSquareB-Light.eot');
+	src: url('../fonts/NanumSquareB-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/NanumSquareB-Light.woff2') format('woff2'),
+		url('../fonts/NanumSquareB-Light.woff') format('woff'),
+		url('../fonts/NanumSquareB-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nanum Square';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../fonts/NanumSquareEB-Light.eot');
+	src: url('../fonts/NanumSquareEB-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/NanumSquareEB-Light.woff2') format('woff2'),
+		url('../fonts/NanumSquareEB-Light.woff') format('woff'),
+		url('../fonts/NanumSquareEB-Light.ttf') format('truetype');
+}

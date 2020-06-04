@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>맛있는 녀석들 지도 Tasty Guys Map</title>
+	<link rel="stylesheet" href="assets/css/fonts.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="assets/css/common.css"> -->
+	<!--<link rel="stylesheet" href="assets/css/style.css">-->
+	<script src="assets/js/jquery-2.2.4.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/ui.js"></script>
+	<style>
+		html,body{height:100%;}
+		.map-wrap{position:absolute;top:0;left:0;right:0;bottom:0;}
+		#map{height:100%;}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<!-- <header id="header">
+
+	</header> -->
+	<!-- //header -->
+
+	<div id="container">
+		<!-- main visual -->
+		<div id="main_visual">
+			
+		</div>
+		<!-- // main visual -->
+		
+		<!-- contents -->
+		<div id="contents">
+			
+			<div class="map-wrap">
+				<div id="map"></div>
+			</div>
+		</div>
+		<!-- //contents -->
+	</div>
+	
+	<!-- footer -->
+	<!-- <footer id="footer">
+			
+	</footer> -->
+	<!-- //footer -->
+	
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tf1d1nf1bo&callback=initMap"></script>
+    <script type="text/javascript">
+        var HOME_PATH = window.HOME_PATH || '.';
+		var image_src = HOME_PATH +'/assets/images/logo.png';
+		var position = new naver.maps.LatLng(37.3849483, 127.1229117);
+
+		var map = new naver.maps.Map('map', {
+			center: position,
+			zoom: 14
+		});
+
+		var markerOptions = {
+			position: position.destinationPoint(90, 15),
+			map: map,
+			icon: {
+				url: image_src,
+				size: new naver.maps.Size(128,111),
+				origin: new naver.maps.Point(0, 0),
+				scaledSize: new naver.maps.Size(60, 52)
+			}
+		};
+
+		var marker = new naver.maps.Marker(markerOptions);
+    </script>
+</div>
+</body>
+</html>
