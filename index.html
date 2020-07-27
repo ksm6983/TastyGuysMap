@@ -12,6 +12,7 @@
 	<!--<link rel="stylesheet" href="assets/css/style.css">-->
 	<script src="assets/js/jquery-2.2.4.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 	<script src="assets/js/ui.js"></script>
 	<style>
 		html,body{height:100%;}
@@ -27,7 +28,7 @@
 	</header> -->
 	<!-- //header -->
 
-	<div id="container">
+	<div id="container" data-barba="wrapper">
 		<!-- main visual -->
 		<div id="main_visual">
 			
@@ -35,7 +36,7 @@
 		<!-- // main visual -->
 		
 		<!-- contents -->
-		<div id="contents">
+		<div id="contents" data-barba="container" data-barba-namespace="contents">
 			
 			<div class="map-wrap">
 				<div id="map"></div>
@@ -50,29 +51,122 @@
 	</footer> -->
 	<!-- //footer -->
 	
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tf1d1nf1bo&callback=initMap"></script>
+	<script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tf1d1nf1bo&callback=initMap"></script>
+	<script src="data/accidentdeath.js"></script>
+    <script src="assets/js/MarkerClustering.js"></script>
     <script type="text/javascript">
-        var HOME_PATH = window.HOME_PATH || '.';
-		var image_src = HOME_PATH +'/assets/images/logo.png';
-		var position = new naver.maps.LatLng(37.3849483, 127.1229117);
+		
+		/*var lat = "";
+		var lon = "";
+		
+		// 지도 그리기
+		function getLocation(position){
+			lat = position.coords.latitude;
+			lon = position.coords.longitude;
+			
+			var map = new naver.maps.Map('map', {
+				//useStyleMap: true,
+				center: new naver.maps.LatLng(lat,lon),	// 지도 중심좌표
+				zoom: 15
+			});
+			
+			makeMarker(map);
+		}
+		
+		// 마커 생성
+		function makeMarker(map) {
+			var HOME_PATH = window.HOME_PATH || '.';
+			var image_src = HOME_PATH +'/assets/images/logo.png';
 
-		var map = new naver.maps.Map('map', {
-			center: position,
-			zoom: 14
+			var marker = new naver.maps.Marker({
+				map: map,
+				position: new naver.maps.LatLng(lat, lon),
+				icon: {
+					url: image_src,
+					size: new naver.maps.Size(128,111),
+					origin: new naver.maps.Point(0, 0),
+					scaledSize: new naver.maps.Size(60, 52)
+				}
+			});
+
+			return marker;
+		}
+		
+		// 현재 위치 정보를 얻기
+		if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition (getLocation, function(error) {
+				
+				//$('#latitude').html(pos.coords.latitude);     // 위도
+                //$('#longitude').html(pos.coords.longitude); // 경도
+            });
+        } else {
+            alert("이 브라우저에서는 Geolocation이 지원되지 않습니다.")
+        }*/
+		
+		var map = new naver.maps.Map("map", {
+			zoom: 6,
+			center: new naver.maps.LatLng(36.2253017, 127.6460516),
+			zoomControl: true,
+			zoomControlOptions: {
+				position: naver.maps.Position.TOP_LEFT,
+				style: naver.maps.ZoomControlStyle.SMALL
+			}
 		});
 
-		var markerOptions = {
-			position: position.destinationPoint(90, 15),
-			map: map,
-			icon: {
-				url: image_src,
-				size: new naver.maps.Size(128,111),
-				origin: new naver.maps.Point(0, 0),
-				scaledSize: new naver.maps.Size(60, 52)
-			}
-		};
+		var markers = [],
+			data = accidentDeath.searchResult.accidentDeath;
 
-		var marker = new naver.maps.Marker(markerOptions);
+		for (var i = 0, ii = data.length; i < ii; i++) {
+			var spot = data[i],
+				latlng = new naver.maps.LatLng(spot.grd_la, spot.grd_lo),
+				marker = new naver.maps.Marker({
+					position: latlng,
+					draggable: true
+				});
+
+			markers.push(marker);
+		}
+
+		var htmlMarker1 = {
+				content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:red;"></div>',
+				size: N.Size(40, 40),
+				anchor: N.Point(20, 20)
+			},
+			htmlMarker2 = {
+				content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:red;"></div>',
+				size: N.Size(40, 40),
+				anchor: N.Point(20, 20)
+			},
+			htmlMarker3 = {
+				content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:red;"></div>',
+				size: N.Size(40, 40),
+				anchor: N.Point(20, 20)
+			},
+			htmlMarker4 = {
+				content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:red;"></div>',
+				size: N.Size(40, 40),
+				anchor: N.Point(20, 20)
+			},
+			htmlMarker5 = {
+				content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:red;"></div>',
+				size: N.Size(40, 40),
+				anchor: N.Point(20, 20)
+			};
+
+		var markerClustering = new MarkerClustering({
+			minClusterSize: 2,
+			maxZoom: 13,
+			map: map,
+			markers: markers,
+			disableClickZoom: false,
+			gridSize: 120,
+			icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
+			indexGenerator: [10, 100, 200, 500, 1000],
+			stylingFunction: function(clusterMarker, count) {
+				$(clusterMarker.getElement()).find('div:first-child').text(count);
+			}
+		});
+		
     </script>
 </div>
 </body>

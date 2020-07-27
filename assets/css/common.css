@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+/* variables */
+:root {
+	--primary-color: #5D4230;
+	
+	--color-brown: #351E17;
+	--color-beige: #DDBA87;
+	--color-yellow: #F9E6A9;
+}
+
 /* reset */
 *,:before,:after{box-sizing:border-box}
 html{overflow-y:scroll;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
